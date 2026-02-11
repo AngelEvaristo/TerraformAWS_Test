@@ -1,11 +1,5 @@
-resource "null_resource" "run_script" {
+resource "local_file" "archivo_txt" {
+  filename = "${path.module}/${var.nombre}.txt"
 
-  # Esto fuerza que se ejecute siempre
-  triggers = {
-    always_run = timestamp()
-  }
-
-  provisioner "local-exec" {
-    command = "bash script.sh"
-  }
+  content = "Hola equipo , archivo creado por Terraform."
 }

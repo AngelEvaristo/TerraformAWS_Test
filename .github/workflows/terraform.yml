@@ -49,7 +49,7 @@ jobs:
       #   run: terraform plan -out=tfplan
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -var="nombre=TecyLab"
 
       - name: Validar script
         run: ls
